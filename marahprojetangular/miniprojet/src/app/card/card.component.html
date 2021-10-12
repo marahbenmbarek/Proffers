@@ -1,0 +1,66 @@
+
+<div class="carte">
+
+  <div class="card-container" *ngFor="let e of listOffre">
+    <div *ngIf="e.profil == offree || offree == null">
+    <div class="card">
+      <div class="front">
+        <div class="cover">
+          <img src={{e.logo}}/>
+        </div>
+
+        <div class="content">
+          <div class="main">
+            <h3 class="name">{{e.profil}}</h3>
+            <p class="profession">{{e.enterprise}}</p>
+
+            <p class="text-center">{{e.city}}</p>
+            <p class="text-center">{{e.categorie}}</p>
+          </div>
+          <div class="footer">
+            <div class="rating">
+              <i class="fa fa-mail-forward"></i> More Information
+            </div>
+          </div>
+        </div>
+      </div> <!-- end front panel -->
+      <div class="back">
+        <div class="header">
+          <h5 class="motto">{{e.email}}</h5>
+        </div>
+        <div class="content">
+          <div class="main">
+            <h4 class="text-center">Job Description</h4>
+            <p class="text-center">{{e.description}}</p>
+
+<!--            <div class="stats-container">-->
+<!--              <div class="stats">-->
+
+<!--              </div>-->
+
+<!--              <div class="stats">-->
+<!--                <h4>{{e.views}}</h4>-->
+<!--                <p>-->
+<!--                  views-->
+<!--                </p>-->
+<!--              </div>-->
+
+<!--              <div class="stats">-->
+<!--                -->
+<!--              </div>-->
+<!--            </div>-->
+
+          </div>
+        </div>
+        <div class="footer">
+          <div class="social-links text-center">
+
+            <a href={{e.link}} class="google">Apply for the Job</a>
+
+          </div>
+        </div>
+      </div> <!-- end back panel -->
+    </div> <!-- end card -->
+  </div> <!-- end card-container -->
+  </div>
+</div>

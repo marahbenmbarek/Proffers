@@ -1,0 +1,36 @@
+<header class="header-area">
+  <div class="header-padding">
+    <div class="header-logo">
+      <img src="assets/Img/logo1.png"/>
+    </div>
+
+    <div class="header-navbar">
+      <div class="header-search">
+        <div class="option-select-area">
+          <select name="" id="">
+            <option value="bangladesh">All Category</option>
+            <option value="bangladesh">Mobile</option>
+            <option value="bangladesh">Laptop</option>
+            <option value="bangladesh">Tablet</option>
+            <option value="bangladesh">Pc</option>
+          </select>
+        </div>
+        <form>
+          <div class="form-group">
+
+            <input type="string" id="inputFormation" class="form-control col-md-12" placeholder="Offer Name" [(ngModel)]="offree" [ngModelOptions]="{standalone: true}">
+
+          </div>
+        </form>
+        <button type="submit"><span><i class="fas fa-search    "></i></span></button>
+      </div>
+      <div class="add-button" routerLink="/form">
+        <button> Post a Job&nbsp;&nbsp;<i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <div class="header-social" >
+      <app-nav-items></app-nav-items>
+    </div>
+  </div>
+</header>
+

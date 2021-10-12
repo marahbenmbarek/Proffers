@@ -1,0 +1,24 @@
+.header-image Img {
+  width: 90%;
+  height: 400px;
+  margin: 10px 0px 0px 90px;
+
+}
+
+@media only screen and (max-width: 1380px){
+  .header-image Img {
+    width: 90%;
+    height: 400px;
+    margin: 10px 0px 0px 70px;
+
+  }
+}
+
+@media only screen and (min-width: 1920px){
+  .header-image Img {
+    width: 92.5%;
+    height: 400px;
+    margin: 10px 0px 0px 72px;
+
+  }
+}

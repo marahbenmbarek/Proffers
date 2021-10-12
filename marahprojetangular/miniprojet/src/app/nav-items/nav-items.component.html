@@ -1,0 +1,22 @@
+<div class="nav-items-container">
+
+
+
+  <div class="dropdown-menu2">
+    <label class="dropdown-label">welcome {{ username }}</label>
+    <div class="avatar">
+      <a href="#"><img alt="LOGO" src="assets/Img/avatar.jpg"></a>
+    </div>
+    <div class="dropdown-content">
+      <div class="dropdown-content-item"><a href="#"><i class="fa fa-home"></i> &nbsp; Profile</a></div>
+      <div class="dropdown-content-item"><a href="#"><i class="fa fa-cog"></i> &nbsp; Settings</a></div>
+      <div class="dropdown-content-item"><a href class="nav-link" (click)="logout()" ><i class="fa fa-sign-out"></i> &nbsp; Log out</a></div>
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a  class="nav-link" routerLink="/profile">{{ username }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

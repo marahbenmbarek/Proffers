@@ -1,0 +1,125 @@
+<!-- <form>
+<div class="form-group">
+  <label>Id</label>
+  <input type="text" name="id" [(ngModel)]="offre.id" class="form-control">
+</div>
+<div class="form-group">
+  <label>Nom</label>
+  <input type="text" name="nom" [(ngModel)]="offre.nom" class="form-control">
+</div>
+<div class="form-group">
+  <label>Prenom</label>
+  <input type="text" name="prenom" [(ngModel)]="offre.prenom" class="form-control">
+</div>
+<button (click)="save()" class="btn btn-success">Ajouter</button>
+</form> -->
+<!-- reactive form -->
+<app-navbar></app-navbar>
+
+<div class="container">
+ <h1>Add a Job</h1>
+<form [formGroup]="registerForm">
+  <div class="form-group">
+    <label>id</label>
+    <input type="number" class="form-control" formControlName="id">
+    <div class="alert alert-danger" *ngIf="id.errors && id.touched">
+      the title job is a required field
+    </div>
+  </div>
+  <div class="form-group">
+    <label>title_job</label>
+    <input type="text" class="form-control" formControlName="title_job">
+    <div class="alert alert-danger" *ngIf="job_title.errors && job_title.touched">
+      the title job is a required field
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Entreprise</label>
+    <input type="text" class="form-control" formControlName="Entreprise">
+    <div class="alert alert-danger" *ngIf="Entreprise.errors && Entreprise.touched">
+      the Entreprise is a required field
+    </div>
+  </div>
+  <div class="form-group">
+    <label>profil</label>
+      <input type="text" class="form-control" formControlName="profil">
+      <div class="alert alert-danger" *ngIf="profil.errors && profil.touched">
+        the Profil is a required field
+      </div>
+  </div>
+  <div class="form-group">
+    <label>categorie</label>
+      <input type="text" class="form-control" formControlName="categorie">
+      <div class="alert alert-danger" *ngIf="categorie.errors && categorie.touched">
+        the categorie is a required field
+      </div>
+  </div>
+  <div class="form-group">
+    <label>sector</label>
+      <input type="text" class="form-control" formControlName="sector">
+      <div class="alert alert-danger" *ngIf="sector.errors && sector.touched">
+        the sector is a required field
+      </div>
+  </div>
+  <div class="form-group">
+    <label>city</label>
+    <input type="text" class="form-control" formControlName="city">
+    <div class="alert alert-danger" *ngIf="city.errors && city.touched">
+      the City is a required field
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" formControlName="email">
+    <div class="alert alert-danger" *ngIf="email.errors && email.touched">
+      <div *ngIf="email.errors.required">the name is a required field</div>
+      <div *ngIf="email.errors.pattern">Message Pattern</div>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <label>description</label>
+      <input type="text" class="form-control" formControlName="description">
+      <div class="alert alert-danger" *ngIf="description.errors && description.touched">
+        the description is a required field
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Date_start</label>
+      <input type="date" class="form-control" formControlName="Date_start">
+    </div>
+    <div class="form-group">
+      <label>Date_end</label>
+      <input type="date" class="form-control" formControlName="Date_end">
+    </div>
+
+  <button class="alert alert-success" (click)="save()" [disabled]="registerForm.invalid">
+    Save
+  </button>
+</form>
+
+  <div class="container  ">
+
+    <hr>
+    <h2>List des formations disponible</h2>
+    <hr>
+    <table class="table">
+      <tr><td> titleJob </td><td> categorie</td><td>dateStart  </td><td> dateEnd</td><td>city </td></tr>
+      <tr *ngFor="let e of listoffre " >
+        <td class="lead"> {{e.titleJob}}   </td>
+        <td class="lead"> {{e.categorie}}   </td>
+        <td class="lead">{{e.dateStart}}   </td>
+        <td class="lead">  {{e.dateEnd}} </td>
+        <td class="lead">{{e.city}}  </td>
+        <td><button class="btn btn-primary"  [routerLink]="['editOffre',e.id]">Update</button> </td>
+        <td><button class="btn btn-danger"  (click)="delet(e.id)" >Delete</button> </td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
